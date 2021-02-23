@@ -18,17 +18,11 @@ import React, { useEffect, useState } from "react";
       }
     }
   }));
-
   
-
   export default function Card() {
     const classes = useStyles();
-
     const [data, setData] = useState(cards)
-
     useEffect(() => {
-      console.log(data.cards);
-      // setData(data)
     }, [data])
     return (
       <div className={classes.root}>

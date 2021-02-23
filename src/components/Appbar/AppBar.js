@@ -3,19 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
-import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import GitHub from "@material-ui/icons/GitHub";
 import LinkedIn from "@material-ui/icons/LinkedIn";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
-import Facebook from "@material-ui/icons/Facebook";
-import Twitter from "@material-ui/icons/Twitter";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -46,6 +37,8 @@ export default function MenuAppBar() {
     setAnchorEl(null);
   };
 
+  
+
   return (
     <div className={classes.root}>
  
@@ -56,11 +49,9 @@ export default function MenuAppBar() {
           </Typography>
           {auth && (
             <div>
-             <LinkedIn/>
-             <GitHub/>
-             <Twitter/>
-             <Facebook/>
-             <LocationOnIcon/>
+             <LinkedIn  target="_blank" onClick={event =>  window.location.href='https://www.linkedin.com/in/luis-feliz-465b14192/'}/>
+             <GitHub onClick={event =>  window.location.href='https://github.com/Luisfeliz3'}/>
+             <LocationOnIcon onClick={event =>  window.location.href='https://tinyurl.com/3cdt6mt5'}/>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
@@ -76,8 +67,6 @@ export default function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>
           )}

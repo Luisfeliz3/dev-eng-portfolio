@@ -1,21 +1,19 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { purple } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import Card from "@material-ui/core/Card";
+import Button from "@material-ui/core/Button";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import { purple } from "@material-ui/core/colors";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,25 +21,41 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: "56.25%", // 16:9
   },
   expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: "rotate(180deg)",
   },
   avatar: {
     backgroundColor: purple[500],
+    
+  },
+  buttons: {
+    backgroundColor: purple[500],
+    margin: '20px', 
   },
 }));
 
 export default function RecipeReviewCard(props) {
-  const {title, description, icon,blurb, icon2} = props.cards;
+  const {
+    id,
+    title,
+    description,
+    icon,
+    blurb,
+    icon2,
+    description_title,
+    link_1,
+    link_2,
+    link_3,
+  } = props.cards;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -54,35 +68,25 @@ export default function RecipeReviewCard(props) {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-           {icon2}
+            {icon2}
           </Avatar>
         }
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon />
+            {/* <MoreVertIcon /> */}
           </IconButton>
         }
         title={title}
         subheader={blurb}
       />
-      <CardMedia
-        className={classes.media}
-        image= {icon}
-        title="Paella dish"
-      />
-      
+      <CardMedia className={classes.media} image={icon} title="DEV-PICS" />
+
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-        {description}
+          {description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        {/* <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton> */}
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -96,9 +100,28 @@ export default function RecipeReviewCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>ROLE:</Typography>
+          <Typography paragraph>{description_title}</Typography>
           <Typography paragraph>
-           {props.cards.details}
+            {props.cards.details}
+            {id === 3 ? 
+          <ul >
+           <li>
+           <Button className={classes.buttons} variant="contained" color="primary" href= {link_1}>
+            Prepair Application
+            </Button>
+           </li>
+           <li>
+            <Button className={classes.buttons} variant="contained" color="orange" href= {link_2}>
+            How To
+            </Button>
+            </li>
+            <li>
+            <Button  className={classes.buttons} variant="contained" color="primary" href= {link_3}>
+            Prepair Application
+            </Button>
+            </li>
+            </ul> : " " 
+          }
           </Typography>
         </CardContent>
       </Collapse>
