@@ -117,7 +117,7 @@ export default function RecipeReviewCard(props) {
             </li>
             <li>
             <Button  className={classes.buttons} variant="contained" color="primary" href= {link_3}>
-            Prepair Application
+            Weather Dashboard
             </Button>
             </li>
             </ul> : " " 

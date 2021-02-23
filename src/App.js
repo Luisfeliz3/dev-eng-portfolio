@@ -4,7 +4,7 @@ import {
   Grid,
   Avatar,
 } from "@material-ui/core";
-import Appbar from "./components/Appbar/AppBar"
+import Appbar from "./components/AppBar/AppBar"
 import useStyles from "./styles";
 import Card from "./components/Card/Card";
 import img from "./image/me.png";
