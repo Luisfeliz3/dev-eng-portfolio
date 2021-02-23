@@ -10,8 +10,6 @@ import React, { useEffect, useState } from "react";
       flexWrap: "wrap",
       "& > *": {
         margin: theme.spacing(3),
-        width: theme.spacing(16),
-        height: theme.spacing(16),
         marginTop: theme.spacing(20),
         height: theme.spacing(60),
         width: theme.spacing(40),

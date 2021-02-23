@@ -13,7 +13,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { purple } from "@material-ui/core/colors";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -101,7 +101,7 @@ export default function RecipeReviewCard(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>{description_title}</Typography>
-          <Typography paragraph>
+        
             {props.cards.details}
             {id === 3 ? 
           <ul >
@@ -111,7 +111,7 @@ export default function RecipeReviewCard(props) {
             </Button>
            </li>
            <li>
-            <Button className={classes.buttons} variant="contained" color="orange" href= {link_2}>
+            <Button className={classes.buttons} variant="contained" color="primary" href= {link_2}>
             How To
             </Button>
             </li>
@@ -122,7 +122,7 @@ export default function RecipeReviewCard(props) {
             </li>
             </ul> : " " 
           }
-          </Typography>
+         
         </CardContent>
       </Collapse>
     </Card>
