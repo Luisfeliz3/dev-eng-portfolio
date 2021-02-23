@@ -39,7 +39,7 @@ export const cards = {
       User Authentication,
       ORM,
       Algorithms,
-      DataStructures
+      DataStructures.
       `,
       details_title : "",
       icon : `../static/mernstack.png`,
