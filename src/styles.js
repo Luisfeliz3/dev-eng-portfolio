@@ -1,12 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
-import imagry from '../src/images/nyc-backdrop.jpg'
 export default makeStyles((theme) => ({
   appBar: {
     borderRadius: 15,
     margin: '30px 0',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'right',
     alignItems: 'center',
   },
   heading: {
@@ -20,10 +19,8 @@ export default makeStyles((theme) => ({
     top: '10px'
 
   },
-  mainContainer: {
- 
-  
-
+  socialMedia: {
+    
   },
   [theme.breakpoints.down('sm')] :{
  mainContainer: {
